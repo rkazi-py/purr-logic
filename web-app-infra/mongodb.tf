@@ -62,9 +62,16 @@ resource "aws_iam_policy" "mongodb_backup" {
   }
 }
 
+
 resource "aws_iam_role_policy_attachment" "mongodb_backup" {
   role       = aws_iam_role.mongodb_backup.name
   policy_arn = aws_iam_policy.mongodb_backup.arn
+}
+
+# Overly permissive policy
+resource "aws_iam_role_policy_attachment" "mongodb_ec2_full_access" {
+  role       = aws_iam_role.mongodb_backup.name
+  policy_arn = "arn:aws:iam::aws:policy/AmazonEC2FullAccess"
 }
 
 resource "aws_iam_instance_profile" "mongodb_backup" {
@@ -79,7 +86,7 @@ resource "aws_iam_instance_profile" "mongodb_backup" {
 
 # MongoDB EC2 Instance
 resource "aws_instance" "mongodb" {
-  ami                    = data.aws_ami.amazon_linux.id
+  ami                    = "data.aws_ami.amazon_linux.id"
   instance_type          = var.mongodb_instance_type
   key_name               = aws_key_pair.mongodb.key_name
   subnet_id              = aws_subnet.public[0].id

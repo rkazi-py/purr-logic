@@ -13,6 +13,10 @@ override.tf.json
 _override.tf
 *_override.tf
 .terraform.lock.hcl
+connect_csp.sh
+webapp-key.pem
+secret.yaml
+
 
 # IDEs
 .vscode/
