@@ -86,7 +86,7 @@ resource "aws_iam_instance_profile" "mongodb_backup" {
 
 # MongoDB EC2 Instance
 resource "aws_instance" "mongodb" {
-  ami                    = "data.aws_ami.amazon_linux.id"
+  ami                    = data.aws_ami.amazon_linux.id
   instance_type          = var.mongodb_instance_type
   key_name               = aws_key_pair.mongodb.key_name
   subnet_id              = aws_subnet.public[0].id
