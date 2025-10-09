@@ -8,4 +8,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Run My Docker Action
-        uses: ./tasky-main/git-actions # This points to the directory containing action.yml
+        uses: ./tasky-main/gh-actions # This points to the directory containing action.yml
