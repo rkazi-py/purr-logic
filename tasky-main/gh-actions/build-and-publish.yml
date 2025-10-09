@@ -5,11 +5,6 @@
 
 name: Build and Publish a Docker image
 
-on:
-  push:
-    branches: ['main']
-  workflow_dispatch:
-
 env:
   REGISTRY: docker.io
   IMAGE_NAME: purr-logic
