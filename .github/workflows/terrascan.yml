@@ -25,7 +25,11 @@ jobs:
           iac_type: 'terraform' # Specify the IaC type. Other options include 'k8s' and 'helm'.
           only_warn: false # This will cause the action to fail if violations are found.
           sarif_upload: true # Generate a SARIF file for GitHub Code Scanning.
-
+          
+      - name: Print SARIF file content
+        run: cat terrascan.sarif
+        continue-on-error: true #
+        
       - name: Upload SARIF file
         uses: github/codeql-action/upload-sarif@v3
         if: success() || failure()
