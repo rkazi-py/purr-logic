@@ -1,2 +1,1 @@
-Author: Ruhina Kazi 
-Github Action Test
+Author: Ruhina Kazi
