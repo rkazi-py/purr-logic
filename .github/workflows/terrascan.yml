@@ -29,7 +29,7 @@ jobs:
         uses: tenable/terrascan-action@v1.4.1
         with:
           iac_type: 'terraform' # Specify the IaC type. Other options include 'k8s' and 'helm'.
-          iac_dir: '/web-app-infra'
+          iac_dir: 'web-app-infra'
           only_warn: false # This will cause the action to fail if violations are found.
           sarif_upload: true # Generate a SARIF file for GitHub Code Scanning.
           
