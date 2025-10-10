@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 
 permissions:
   contents: read
@@ -20,7 +23,7 @@ jobs:
 
       - name: Run Terrascan
         id: terrascan
-        uses: tenable/terrascan-action@main
+        uses: tenable/terrascan-action@v2.0.0
         with:
           iac_type: 'terraform' # Specify the IaC type. Other options include 'k8s' and 'helm'.
           only_warn: false # This will cause the action to fail if violations are found.
