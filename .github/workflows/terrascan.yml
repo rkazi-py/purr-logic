@@ -23,7 +23,7 @@ jobs:
 
       - name: Run Terrascan
         id: terrascan
-        uses: tenable/terrascan-action@v2.0.0
+        uses: tenable/terrascan-action@v1.4.1
         with:
           iac_type: 'terraform' # Specify the IaC type. Other options include 'k8s' and 'helm'.
           only_warn: false # This will cause the action to fail if violations are found.
