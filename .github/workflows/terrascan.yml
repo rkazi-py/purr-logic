@@ -22,7 +22,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: List files for debugging
-        run: pwd
+        run: ls -a
         
       - name: Run Terrascan
         id: terrascan
