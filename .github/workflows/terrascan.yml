@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 
 permissions:
   contents: read
@@ -18,11 +21,16 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: List files for debugging
+        run: ls -a
+        
       - name: Run Terrascan
         id: terrascan
-        uses: tenable/terrascan-action@main
+        uses: tenable/terrascan-action@v1.4.1
         with:
           iac_type: 'terraform' # Specify the IaC type. Other options include 'k8s' and 'helm'.
+          iac_dir: 'web-app-infra'
+          policy_type: 'aws'
           only_warn: false # This will cause the action to fail if violations are found.
           sarif_upload: true # Generate a SARIF file for GitHub Code Scanning.
           
