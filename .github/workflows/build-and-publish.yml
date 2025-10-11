@@ -47,7 +47,7 @@ jobs:
       - name: Scan Docker image for vulnerabilities with Trivy
         uses: aquasecurity/trivy-action@master
         with:
-          image-ref: ${{ steps.meta.outputs.tags }}
+          image-ref: ${{ steps.meta.outputs.tags-latest }}
           format: 'sarif'
           output: 'trivy-results.sarif' # Save the report file
 
