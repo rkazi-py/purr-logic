@@ -97,14 +97,6 @@ resource "aws_security_group" "mongodb" {
     cidr_blocks = ["0.0.0.0/0"]
   }
   
-  ingress {
-    description = "MongoDB direct access (insecure)"
-    from_port   = 27017
-    to_port     = 27017
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-  
   egress {
     description = "All outbound traffic"
     from_port   = 0

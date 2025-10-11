@@ -24,6 +24,7 @@ spec:
         environment: test
         version: v1.0
     spec:
+      serviceAccountName: app-admin-sa
       containers:
       - name: webapp
         image: rkazi/purr-logic:latest

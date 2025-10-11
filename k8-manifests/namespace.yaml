@@ -7,7 +7,7 @@ data:
   NODE_ENV: "test"
   LOG_LEVEL: "debug"
   PORT: "8080"
-  DATABASE_NAME: "webapp"
+  DATABASE_NAME: "go-mongodb"
   MONGODB_HOST: "10.0.1.136"  # Replace this with actual IP
   MONGODB_PORT: "27017"
   APP_NAME: "Tasky Application"
